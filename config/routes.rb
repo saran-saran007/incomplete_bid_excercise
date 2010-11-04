@@ -2,6 +2,7 @@ QutinoPrototypeDevise::Application.routes.draw do
   resources :posts do
     resources :tasks
     resources :comments
+    resources :bids
   end
 
   devise_for :users

@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :tasks # Fk poiting to tasks bidded by the user
                   # Task owner user can be derived from post's owner
-  has_many :comments
+  has_many :comments, :dependent => :destroy
+  has_many :bids, :dependent => :destroy
 end

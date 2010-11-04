@@ -6,7 +6,7 @@
     <th>Sell or buy</th>
     <th>Title</th>
     <th>Body</th>
-    <th>View</th>
+    <th># of Bids</th>
   </tr>
 <div class ="post_index" >
 <% @posts.each do |post| %>
@@ -16,6 +16,7 @@
    <td><%= post.sell_or_buy %></td>
    <td><%= post.title %></td>
    <td><%= post.body %> </td>
+   <td><%= post.bid_count %></td>
    <td><%= link_to 'Show', post %></td>
   </tr>
 </div>
