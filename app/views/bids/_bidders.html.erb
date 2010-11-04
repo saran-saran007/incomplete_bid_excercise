@@ -1,0 +1,8 @@
+<b> Bidder's List </b>
+   <% bid_count = 1 %>
+<% @post.bids.each do |bid| %>
+   <% bid_count += 1 %>
+  <p>
+   <%= bid.user.email %>
+  </p>
+<% end %>
