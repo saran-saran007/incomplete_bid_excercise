@@ -1,8 +1,11 @@
 <b> Bidder's List </b>
-   <% bid_count = 1 %>
 <% @post.bids.each do |bid| %>
-   <% bid_count += 1 %>
-  <p>
-   <%= bid.user.email %>
-  </p>
+ <br>
+   <div style="float: left; width: auto;">
+     <%= bid.user.email %><br>
+   </div>
+   <% unless @post.bid_winner_id %>
+      <%= button_to "Offer Bid", offer_bid_post_bid_path(@post, bid),
+          :action => "offer_bid", :method => :post %>
+   <% end %>
 <% end %>

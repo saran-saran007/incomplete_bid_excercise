@@ -21,14 +21,24 @@
 </p>
 <%= render :partial => 'tasks/show' %>
 
-<% if @post.user_id != current_user.id %>
-    <%= render :partial => 'bids/form' %>
+<% unless im_owner(@post) %>
+    <% unless @post.bid_winner_id %>
+       <%= render :partial => 'bids/form' %>
+    <% else %>
+       <b> Bidding Closed </b>
+    <% end %>
 <% else %>
     <%= render :partial => 'bids/bidders' %>
 <% end %>
-<p>
-Total # of Bids received:<%= @post.bid_count %>
-</p>
+
+<br>Total # of Bids received:<%= @post.bid_count %>
+<% if @post.bid_winner_id %>
+   <% bid_winner = User.find(@post.bid_winner_id) %>
+   <br> <b>Bid Winner </b><%= bid_winner.email %>
+<% else %>
+   <br><b>Bidding is Still Open !!! </b>
+<% end %>
+
 <%= render :partial => 'comments/show' %>
 <%= render :partial => 'comments/form' %>
 

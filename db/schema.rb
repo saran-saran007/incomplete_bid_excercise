@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101104185828) do
+ActiveRecord::Schema.define(:version => 20101121112555) do
 
   create_table "bids", :force => true do |t|
     t.integer  "post_id"
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(:version => 20101104185828) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "bid_count"
+    t.integer  "bid_winner_id"
   end
 
   create_table "tasks", :force => true do |t|
     t.integer  "post_id"
-    t.integer  "user_id"
     t.integer  "task_state"
     t.string   "page_visits"
     t.string   "geo_location"

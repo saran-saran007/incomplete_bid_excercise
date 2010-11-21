@@ -4,7 +4,7 @@
     <p>
     <%= comment.user.email %> says:
       <%= comment.comment_body %> 
-      <% if comment.user.id == current_user.id %>
+      <% if im_owner(comment) %>
         <%= link_to 'Delete', [comment.post, comment],
                                      :confirm => 'Are you sure?',
                                      :method => :delete %>

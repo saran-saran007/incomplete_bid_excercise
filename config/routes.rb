@@ -1,8 +1,11 @@
 QutinoPrototypeDevise::Application.routes.draw do
   resources :posts do
-    resources :tasks
-    resources :comments
-    resources :bids
+    resources :tasks, :comments
+    resources :bids do
+      member do
+        post 'offer_bid'
+      end
+    end
   end
 
   devise_for :users

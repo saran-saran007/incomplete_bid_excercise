@@ -1,5 +1,10 @@
 <%= form_for([@post, @post.bids.build]) do |f| %>
      <div class="actions">
-         <%= f.submit %>
+         <% if bid_already_placed?(@post) %>
+            <b> Your Bid is already placed wait for Approval </b>
+         <% else %>
+            <% #- TODO: Tell money expected during bidding %>
+            <%= f.submit "Bid for this Post" %>
+         <% end %>
      </div>
  <% end %> 
