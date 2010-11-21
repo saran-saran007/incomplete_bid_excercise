@@ -47,4 +47,5 @@ class BidsController < ApplicationController
         redirect_to post_path(@post)
   end
 
+   #display_all_my_bids moved to bids_helper, really should it be ?
 end
