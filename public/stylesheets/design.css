@@ -72,6 +72,8 @@ margin-top:60px;
 background-image:url(images/sign_in.png);
 background-repeat:no-repeat;
 position:absolute;
+float: right;
+width: auto
 }
 .sign_up{
 width:87px;

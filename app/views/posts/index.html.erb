@@ -12,7 +12,7 @@
 <% @posts.each do |post| %>
   <tr>
    <% post_owner = User.find(post.user_id) %>
-   <td><%= post_owner.email %> </td>
+   <td><%= post_owner.username %> </td>
    <td><%= post.sell_or_buy %></td>
    <td><%= post.title %></td>
    <td><%= post.body %> </td>

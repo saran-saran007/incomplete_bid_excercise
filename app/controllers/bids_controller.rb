@@ -43,7 +43,7 @@ class BidsController < ApplicationController
      @bid = Bid.find(params[:id])
      @post.update_attribute(:bid_winner_id, @bid.user_id)
      safe_save(@post)
-     flash[:notice] = "Task offered to @post.user.email"
+     flash[:notice] = "Task offered to " +  @bid.user.username
         redirect_to post_path(@post)
   end
 

@@ -2,7 +2,7 @@
 <% post_owner = User.find(@post.user_id) %>
 <p>
   <b>Created by:</b>
-  <%= post_owner.email %>
+  <%= post_owner.username %>
 </p>
 
 <p>
@@ -34,7 +34,7 @@
 <br>Total # of Bids received:<%= @post.bid_count %>
 <% if @post.bid_winner_id %>
    <% bid_winner = User.find(@post.bid_winner_id) %>
-   <br> <b>Bid Winner </b><%= bid_winner.email %>
+   <br> <b>Bid Winner </b><%= bid_winner.username %>
 <% else %>
    <br><b>Bidding is Still Open !!! </b>
 <% end %>

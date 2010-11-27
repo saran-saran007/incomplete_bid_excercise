@@ -7,8 +7,12 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <%- end -%>
+
    <% if user_signed_in? %>
-     Signed in as <%= current_user.email %>.
+     Signed in as <%= current_user.username %>
      <%= link_to "Sign out", destroy_user_session_path %>  <br />
      <%= link_to "My Posts", my_posts_path %>
      <%= link_to "Create Post", new_post_path %>
@@ -18,6 +22,5 @@
    <% end %>
 
 <%= yield %>
-
 </body>
 </html>

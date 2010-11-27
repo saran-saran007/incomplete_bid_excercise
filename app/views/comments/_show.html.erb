@@ -2,7 +2,7 @@
   <b>Comments</b><br />
   <% @post.comments.each do |comment| %>
     <p>
-    <%= comment.user.email %> says:
+    <%= comment.user.username %> says:
       <%= comment.comment_body %> 
       <% if im_owner(comment) %>
         <%= link_to 'Delete', [comment.post, comment],

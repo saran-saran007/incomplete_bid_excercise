@@ -3,10 +3,10 @@
      <% current_user.bids.each do |userz_bid| %>
         <p>
         <% post_owner = User.find(userz_bid.post.user_id) %>
-        <b>Post owner:</b> <%= post_owner.email %>
+        <b>Post owner:</b> <%= post_owner.username %>
         <b>Post title:</b> <%= userz_bid.post.title %>
         <% post_winner = User.find(userz_bid.post.bid_winner_id) %>
-        <b>Postz Bid winner:</b> <%= post_winner.email %>
+        <b>Postz Bid winner:</b> <%= post_winner.username %>
         <%= link_to 'Show the post', userz_bid.post %>
         </p>
      <% end %>

@@ -37,3 +37,8 @@ en:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
+
+activemodel:
+  attributes:
+    user:
+      login: "Username or email"

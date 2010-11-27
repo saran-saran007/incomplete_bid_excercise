@@ -2,7 +2,7 @@
 <% @post.bids.each do |bid| %>
  <br>
    <div style="float: left; width: auto;">
-     <%= bid.user.email %><br>
+     <%= bid.user.username %><br>
    </div>
    <% unless @post.bid_winner_id %>
       <%= button_to "Offer Bid", offer_bid_post_bid_path(@post, bid),
